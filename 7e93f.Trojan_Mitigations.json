@@ -1,0 +1,209 @@
+{
+        "name": "7e93f.Trojan_Mitigations",
+        "versions": {
+                "attack": "14",
+                "navigator": "4.9.1",
+                "layer": "4.5"
+        },
+        "domain": "enterprise-attack",
+        "description": "",
+        "filters": {
+                "platforms": [
+                        "Linux",
+                        "macOS",
+                        "Windows",
+                        "Office 365",
+                        "Azure AD",
+                        "AWS",
+                        "GCP",
+                        "Azure",
+                        "SaaS",
+                        "PRE",
+                        "Network"
+                ]
+        },
+        "sorting": 0,
+        "layout": {
+                "layout": "flat",
+                "showID": false,
+                "showName": true
+        },
+        "hideDisabled": false,
+        "techniques": [
+                {
+                        "techniqueID": "T1129-M1038\nIdentify and block potentially malicious software executed through this technique by using application control tools capable of preventing unknown DLLs from being loaded.\n\nT1106-M1038\nIdentify and block potentially malicious software executed that may be executed through this technique by using application control  tools",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "like Windows Defender Application Control",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "AppLocker",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "or Software Restriction Policies  where appropriate. \n\nT1047-M1026\nPrevent credential overlap across systems of administrator and privileged accounts. \n\nT1047-M1018\nBy default",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "only administrators are allowed to connect remotely using WMI. Restrict other users who are allowed to connect",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "or disallow all users to connect remotely to WMI.\n\nT1059.003-M1038\nUse application control where appropriate.\n\nT1574.002-M1013\nWhen possible",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "include hash values in manifest files to help prevent side-loading of malicious libraries.\n\nT1574.002-M1051\nUpdate software regularly to include patches that fix DLL side-loading vulnerabilities.\n\nT1543.003-M1047\nUse auditing tools capable of detecting privilege and service abuse opportunities on systems within an enterprise and correct them.\n\nT1543.003-M1018\nLimit privileges of user accounts and groups so that only authorized administrators can interact with service changes and service configurations.\n\nT1543-M1047\nUse auditing tools capable of detecting privilege and service abuse opportunities on systems within an enterprise and correct them.\n\nT1543-M1033\nRestrict software installation to trusted repositories only and be cautious of orphaned software packages.\n\nT1543-M1022\nRestrict read/write access to system-level process files to only select privileged users who have a legitimate need to manage system services.\n\nT1543-M1018\nLimit privileges of user accounts and groups so that only authorized administrators can interact with system-level process changes and service configurations.\n\nT1546.010-M1038\nAdversaries can install new AppInit DLLs binaries to execute this technique. Identify and block potentially malicious software executed through AppInit DLLs functionality by using application control  tools",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "like Windows Defender Application Control",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "AppLocker",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "or Software Restriction Policies  where appropriate. \n\nT1546.010-M1051\nUpgrade to Windows 8 or later and enable secure boot.\n\nT1055-M1040\nSome endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.\n\nT1055-M1026\nUtilize Yama (ex: /proc/sys/kernel/yama/ptrace_scope) to mitigate ptrace based process injection by restricting the use of ptrace to privileged users only. Other mitigation controls involve the deployment of security kernel modules that provide advanced access control and process restrictions such as SELinux",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "grsecurity",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "and AppArmor.\n\nT1055.012-M1040\nSome endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.\n\nT1055.003-M1040\nSome endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.\n\nT1055.004-M1040\nSome endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.\n\nT1134-M1026\nLimit permissions so that users and user groups cannot create tokens. This setting should be defined for the local system account only. GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Create a token object.  Also define who can create a process level token to only the local and network service through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Replace a process level token. Administrators should log in as a standard user but run their tools with administrator privileges using the built-in access token manipulation command runas.\n\nT1134-M1018\nAn adversary must already have administrator level access on the local system to make full use of this technique; be sure to restrict users and accounts to the least privileges they require.\n\nT1134.001-M1026\nLimit permissions so that users and user groups cannot create tokens. This setting should be defined for the local system account only. GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Create a token object.  Also define who can create a process level token to only the local and network service through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Replace a process level token. Administrators should log in as a standard user but run their tools with administrator privileges using the built-in access token manipulation command runas.\n\nT1134.001-M1018\nAn adversary must already have administrator level access on the local system to make full use of this technique; be sure to restrict users and accounts to the least privileges they require.\n\nT1055.001-M1040\nSome endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.\n\nT1055.011-M1040\nSome endpoint security solutions can be configured to block some types of process injection based on common sequences of behavior that occur during the injection process.\n\nT1027-M1049\nConsider utilizing the Antimalware Scan Interface (AMSI) on Windows 10 to analyze commands after being processed/interpreted\n\nT1112-M1024\nEnsure proper permissions are set for Registry hives to prevent users from modifying keys for system components that may lead to privilege escalation.\n\nT1036-M1045\nRequire signed binaries.\n\nT1036-M1038\nUse tools that restrict program execution via application control by attributes other than file name for common operating system utilities that are needed.\n\nT1036-M1022\nUse file system access controls to protect folders such as C:\\Windows\\System32.\n\nT1027.002-M1049\nEmploy heuristic-based malware detection. Ensure updated virus definitions and create custom signatures for observed malware.\n\nT1564.003-M1038\nLimit or restrict program execution using anti-virus software. On MacOS",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "allowlist programs that are allowed to have the plist tag. All other programs should be considered suspicious.\n\nT1480-M1055\nExecution Guardrails likely should not be mitigated with preventative controls because it may protect unintended targets from being compromised. If targeted",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior if compromised.\n\nT1555.004-M1042\nConsider enabling the \"Network access: Do not allow storage of passwords and credentials for network authentication\" setting that will prevent network credentials from being stored by the Credential Manager.\n\nT1087-M1028\nPrevent administrator accounts from being enumerated when an application is elevating through UAC since it can lead to the disclosure of account names. The Registry key is located HKLM\\ SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\CredUI\\EnumerateAdministrators. It can be disabled through GPO: Computer Configuration > [Policies] > Administrative Templates > Windows Components > Credential User Interface: E numerate administrator accounts on elevation. \n\nT1114.001-M1041\nUse of encryption provides an added layer of security to sensitive information sent over email. Encryption using public key cryptography requires the adversary to obtain the private certificate along with an encryption key to decrypt messages.\n\nT1573.002-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.\n\nT1573.002-M1020\nSSL/TLS inspection can be used to see the contents of encrypted sessions to look for network-based indicators of malware communication protocols.\n\nT1071-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.\n\nT1573-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.\n\nT1573-M1020\nSSL/TLS inspection can be used to see the contents of encrypted sessions to look for network-based indicators of malware communication protocols.\n\nT1071.001-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.\n\nT1071.004-M1037\nConsider filtering DNS requests to unknown",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "untrusted",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "or known bad domains and resources. Resolving DNS requests with on-premise/proxy servers may also disrupt adversary attempts to conceal data within DNS packets.\n\nT1071.004-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.\n\nT1105-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware or unusual data transfer over known tools and protocols like FTP can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.\n\nT1573.001-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level.\n\nT1029-M1031\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary command and control infrastructure and malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "and will likely be different across various malware families and versions. Adversaries will likely change tool command and control signatures over time or construct protocols in such a way to avoid detection by common defensive tools. \n\nT1486-M1053\nConsider implementing IT disaster recovery plans that contain procedures for regularly taking and testing data backups that can be used to restore organizational data. Ensure backups are stored off system and is protected from common methods adversaries may use to gain access and destroy the backups to prevent recovery. Consider enabling versioning in cloud environments to maintain backup copies of storage objects.\n\nT1489-M1030\nOperate intrusion detection",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "analysis",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "and response systems on a separate network from the production environment to lessen the chances that an adversary can see and interfere with critical response functions.\n\nT1489-M1022\nEnsure proper process and file permissions are in place to inhibit adversaries from disabling or interfering with critical services.\n\nT1489-M1024\nEnsure proper registry permissions are in place to inhibit adversaries from disabling or interfering with critical services.\n\nT1489-M1018\nLimit privileges of user accounts and groups so that only authorized administrators can interact with service changes and service configurations.",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                }
+        ],
+        "gradient": {
+                "colors": [
+                        "#ff6666",
+                        "#ffe766",
+                        "#8ec843"
+                ],
+                "minValue": 0,
+                "maxValue": 100
+        },
+        "legendItems": [],
+        "metadata": [],
+        "showTacticRowBackground": false,
+        "tacticRowBackground": "#dddddd",
+        "selectTechniquesAcrossTactics": true,
+        "selectSubtechniquesWithParent": false
+}
